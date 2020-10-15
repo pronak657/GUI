@@ -1,0 +1,145 @@
+<!--
+ File: cs.uml.edu/~rpatel1/public_html/index.html
+ COMP 4610 Assignment: Creating Your First Web Page
+
+ Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+ Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+ freely copied or excerpted for educational purposes with credit to the author.
+ Created on September 3, 2020 at 5:00 PM
+ 
+ At the moment this page is for HW1 for GUI Programming I. This is a simple page to
+ introduce myself and this will be used as index for future assignments.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Ronak Patel</title>
+    </head>
+    <body>
+        <!-- This section is home of the page. Contains home image and navigation bar.
+            Navigation bar was made using unordered list.
+        -->
+        <section id="Home">
+                <div class="welcomeBox">
+                    <!-- Spiderman image takem from: https://images.hdqwalls.com/wallpapers/spiderman-miles-lost-in-space-4k-0f.jpg -->
+                    <div class="Imagebox">
+                        <img src="./img/Spider.jpg" alt="Spider-man" class="HomeImage">
+                    </div>
+
+                    <!-- Freinds inspired font using: https://fontmeme.com/friends-tv-series-font/ -->
+                    <div class="imageText">
+                        <img src="./img/friends2.png" alt="friends-tv-series-font" class="WelcomeImage">
+                    </div>
+                </div>
+                <header>
+
+                    <!-- I decided to use unordered list to index future assignments using images. 
+                    Currrently the links doesn't work as we have not done all the assignments.
+					It just takes you to the current page-->
+                    <div class="navigation-bar">
+                        <h2 class="navbar-brand"><strong>Ronak Patel</strong></h2>
+                        <nav>
+                            <ul>
+                                <li><a href="#Home">Home</a></li>
+                                <li><a href="#About">About</a></li>
+                                <li><a href="#GUI">GUI</a></li>
+                                <li><a href="#Contact">Contact</a></li>
+                            </ul>
+                        </nav>
+        
+                    </div>
+                </header>
+        </section>
+
+        <!-- AboutContainer has information about the owner of the page and an image -->
+        <div class="AboutContainer" id="About">
+            <div class="AboutImageBox">
+                <img src="./img/Ronak_Circle.png" alt="Spider-man" class="AboutImage">
+            </div>
+            <div class="aboutMe">
+                <p>
+                    Hello! My name is Ronak Patel. I am currently a senior computer science student at University of Massachusetts Lowell graduating in May 2021. I enjoy playing badminton and
+                    ping pong. I have two software internship experiences and I am currently seeking full-time employment. This page is designed as part of my GUI class for the Fall of 2020. My assignments for the class will be indexed here. I will modify the website as I learn more.
+                </p>
+            </div>
+        </div>
+
+        <!-- GUIContainer has the assignments listed for GUI class -->
+        <div class="GUIContainer" id="GUI">
+            <div class="GUIAssignmentsText">
+                <h1>GUI Assignments</h1>
+            </div>
+
+            <div class="GUIAssignments">
+                <!-- Another possible way to index the homeworks 
+                    <div class="Homework">
+                        <img alt="folder" src="img/folder.png" class="FolderImage">
+                        <br>
+                        <h2>HW 3</h2>
+                    </div> 
+                -->
+                
+                <!-- I decided to use unordered list to index future assignments using images. 
+                    Currrently the links doesn't work as we have not done all the assignments. 
+                    It stays on the same page. -->
+                <ul>
+                    <li>
+                        <a href="../HW3/hw3.html" target="_black"><img src="./img/folder3.png" alt="folder" class="FolderImage"></a>						
+                    </li>
+                    <li>
+                        <a href="#GUI" target=""><img src="./img/folder4.png" alt="folder" class="FolderImage"></a>
+                    </li>
+                    <li>
+                        <a href="#GUI" target=""><img src="./img/folder5.png" alt="folder" class="FolderImage"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="GUIAssignments">
+                <ul>
+                    <li>
+                        <a href="#GUI" target=""><img src="./img/folder6.png" alt="folder" class="FolderImage"></a>   
+                    </li>
+                    <li>
+                        <a href="#GUI" target=""><img src="./img/folder7.png" alt="folder" class="FolderImage"></a>
+                    </li>
+                    <li>
+                        <a href="#GUI" target=""><img src="./img/folder8.png" alt="folder" class="FolderImage"></a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <!-- ContactContainer class has the contact details about the owner of the page, copyright message
+            and the validation sticker. -->
+        <div class="ContactContainer">
+                <footer>
+                    <div class="contactMe" id="Contact">
+                        <div class="Email">Email: <a href="mailto:Ronak_Patel@student.uml.edu">Ronak_Patel@student.uml.edu</a></div>
+                        <div class="footer-bar">
+                            <nav>
+                                <ul>
+                                    <li><a href="https://www.linkedin.com/in/ronak-r-patel/" target="_blank">LinkedIn</a></li>
+                                    <li><a href="https://github.com/pronak657" target="_blank">Github</a></li>
+                                </ul>
+                            </nav>
+            
+                        </div>
+                    </div>
+                    <p>
+                        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                            <img class="css-validation"
+                                src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                                alt="Valid CSS!" />
+                            </a>
+                    </p>
+                    <div class="copyright">
+                        Copyright © Ronak Patel 2020
+                    </div>
+                </footer>
+        </div>
+    </body>
+</html>

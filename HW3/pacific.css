@@ -1,0 +1,106 @@
+header, hgroup, nav, footer, figure, figcaption, aside, section, article {
+	display: block;
+}
+
+/* body controls overall look of the page */
+body {
+	background-color: #00569f;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url(ptrbackground.jpg);
+}
+
+/* wrapper controls the div block surrounding the 
+	content */
+#wrapper {
+	width: 80%;
+	min-width: 600px;
+	margin: auto;
+	background-color: #90c8e3;
+}
+
+header {
+	background-color: #000030;
+    color: #FFFFFF;
+    background-image: url(sunset.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+/* nav controls the look of navigation 
+bar on the left */
+nav {
+	float: left;
+	width: 200px;
+	/* padding-left: 18% ; */
+}
+
+nav ul {
+	font-size: 1.2em;
+	list-style: none;
+	font-weight: bolder;
+	line-height: 1.6em;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+}
+
+nav a:hover {
+	color: #FFFFFF;
+}
+
+h1 {
+	margin-bottom: 0;
+	padding: 10px;
+}
+
+h2 {
+	color: #3399CC;
+}
+
+h1, h2 {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+#contact {
+	font-size: 90%;
+}
+
+/* content controls the main content 
+of the page: the image and the list */
+#content {
+	margin-left: 225px;
+	padding: 1% 2%;
+	background-color: #FFFFFF; 	
+}
+
+#content img {
+	float: left;
+	margin-right: 3%;
+	max-width: 100%;
+}
+
+#content li {
+	list-style: url(marker.gif);
+	list-style-position: inside;
+}
+
+.resort {
+	color: #596e80;
+    font-weight: bold;
+}
+
+dt {
+	color: #000033;
+}
+
+/* footer controls the copyright text */
+footer {
+	font-family: Georgia, "Times New Roman", serif;
+	margin-left: 225px;
+	padding: 2%;
+	background-color: #FFFFFF;
+}
+

@@ -1,0 +1,238 @@
+/*
+    File: cs.uml.edu/~rpatel1/public_html/index.css
+    COMP 4610 Assignment: Creating Your First Web Page
+    Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+    Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+    freely copied or excerpted for educational purposes with credit to the author.
+    Created on September 3, 2020 at 5:00 PM
+
+    This file contains style atributes for the elements in the 'index.html' file.
+*/
+
+/*
+    Default style rules for the entire page
+    using tages: html, body, a
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+	background-color:#f4f4f4;
+	color:#555555;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:normal;
+	line-height:1.8em;
+    margin:0;
+}
+
+a {
+    text-decoration: none;
+    color:#555555;
+}
+
+/*
+    navigation-bar controls the navigation bar styling.
+*/
+.navigation-bar {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color: #388ea5;
+}
+
+.navigation-bar ul {
+    list-style: none;
+    display: inline;
+    padding: 0;
+}
+
+.navigation-bar li {
+    margin: auto;
+    padding: 10px 10px;
+    display: inline;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.navigation-bar a {
+    color:black;
+}
+.navigation-bar a:hover {
+    color: lightgrey;
+}
+
+/* .navbar-brand controls the text right on top of navigation bar */
+.navbar-brand a:hover {
+    color: black;
+}
+
+.navbar-brand {
+    color: black;
+    margin: 0;
+    margin-bottom: 15px;
+}
+/* welcomeBox, ImageBox, HomeImage, imageText and WelcomeImage
+    controls the images in the home section */
+.welcomeBox {
+    position: relative;
+}
+
+.Imagebox {
+    display: grid;
+    height: 100%;
+}
+
+.HomeImage {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.imageText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+}
+
+.WelcomeImage {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+/* AboutContainer, AboutImageBox and AboutImage
+    controls the About section of the text and image */
+.AboutContainer{
+    display: flex;
+	width:80%;
+    margin:auto;
+    height: 100vh;
+}
+
+.aboutMe {
+    font-size: 20px;
+    height: 80%;
+    width: 55%;
+    margin: auto;
+    color: #555555;
+    padding-top: 17%;
+}
+
+.AboutImageBox {
+    display: grid;
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.AboutImage {
+    max-width: 100%;
+    max-height: 70%;
+    height: auto;
+}
+
+/* GUIContainer, GUIAssignmentsText, GUIAssignments
+    control the indexing of the upcoming GUI assignments */
+.GUIContainer{
+	width:80%;
+    margin:auto;
+    height: 100vh;
+}
+
+.GUIAssignmentsText {
+    font-size: 20px;
+    margin: auto;
+    color: #555555;
+    text-align: center;
+    padding-top: 7%;
+}
+
+.GUIAssignments {
+    display: grid;
+    justify-content: center;
+}
+
+.GUIAssignments ul {
+    list-style: none;
+    display: inline;
+    padding: 0;
+}
+
+.GUIAssignments li {
+    margin: auto;
+    padding: 10px 10px;
+    display: inline;
+}
+
+.FolderImage {
+    max-width: 100%;
+    height: auto;
+}
+
+/* .FolderImage {
+    width: 12%;
+    height: auto;
+} */
+/* .ContactContainer{
+	width:80%;
+    margin:auto;
+    height: 100vh;
+    display: flex;
+} */
+
+/* ContactContainer and footer-bar control the contact information
+    about the owner */
+.ContactContainer {
+    list-style: none;
+    border: 0px black solid;
+    padding: 10px;
+    text-align: center;
+    background-color: #388ea5;
+    color: black;
+}
+
+.footer-bar ul {
+    list-style: none;
+    display: inline;
+    padding: 0;
+}
+
+.footer-bar li {
+    margin: auto;
+    padding: 10px 10px;
+    display: inline;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer-bar a {
+    color:black;
+}
+
+.footer-bar a:hover {
+    color: lightgrey;
+}
+
+.Email {
+    margin: auto;
+    padding: 10px 10px;
+    display: inline;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Email a {
+    color:black;
+}
+
+.css-validation {
+    border:0;
+    width:88px;
+    height:31px
+}
