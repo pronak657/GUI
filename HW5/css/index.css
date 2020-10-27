@@ -1,0 +1,53 @@
+.myForm {
+  padding-top: 100px;
+}
+
+div#MultiTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  div#MultiTable > p{
+    color: red;
+    font-size: 120%;
+    font-weight: 400;
+  }
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  
+  /* tbody {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  } */
+  
+  tbody > tr > td {
+    background-color: rgb(195, 209, 131);
+    border: 3px solid #663300;
+    color: black;
+    text-align: center;
+    font-size: 160%;
+    font-weight: 900;
+    padding: 10px;
+  }
+  
+  tbody > tr:nth-child(even) > td {
+    background-color: rgb(146, 224, 214);
+  }
+
+  tbody > tr:first-child > td {
+    background-color:rgb(56, 54, 54);
+    color: white;
+  }
+  
+  tbody > tr > td:first-child {
+    background-color: rgb(56, 54, 54);
+    color: white;
+  }
+
+
