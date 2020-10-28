@@ -1,3 +1,12 @@
+<!--
+ File: https://pronak657.github.io/GUI/HW5/hw5.html
+ COMP 4610 Assignment 5: Creating an Interactive Dynamic Table
+
+ Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+ Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+ freely copied or excerpted for educational purposes with credit to the author.
+ Created on October 22nd, 2020 at 5:00 PM
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,10 +27,10 @@
     </head>
     <body id="page-top">
         <div class="wrapper">
-            <!-- Navigation bar has dropdown menu for links to GUI assignments and other links to navigate the site-->
+            <!-- Navigation bar for quick links -->
             <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
                 <div class="container">
-                    <a class="navbar-brand " href="#page-top">Ronak Patel</a>
+                    <a class="navbar-brand " href="#page-top">Interactive Dynamic Table</a>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         Menu
                         <i class="fas fa-bars"></i>
@@ -35,7 +44,8 @@
                     </div>
                 </div>
             </nav>
-        
+            
+            <!-- myForm class contains the form to get user input -->
             <div class="myForm container">
                 <form name="myForm" onsubmit="validateForm(); return false">
                     <!-- <label for="hstart">Starting horizontal multiplier:</label><br>
@@ -51,16 +61,16 @@
                     <input type="submit" value="Submit" onclick="generateTable()"> -->
         
                     <div class="form-row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-3 col-sm-12">
                             <label for="hstart">Starting horizontal multiplier:</label>
                             <input type="number" class="form-control" id="hstart" name="hstart" >    
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-3 col-sm-12">
                             <label for="hend">Ending horizontal multiplier:</label>                    
                             <input type="number" class="form-control" id="hend" name="hend">    
                         </div>
                     </div>
-                    
+
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for="vstart">Starting vertical multiplier:</label>
@@ -78,6 +88,10 @@
             </div>
             <br>
             <div id="MultiTable"></div>
+
+            <footer class="footer bg-dark small text-center text-white-50 fixed-bottom">
+                <div class="container">All Rights Reserved. Copyright © Ronak Patel 2020</div>
+            </footer>
         </div>
 
         <script src="js/index.js"></script>

@@ -1,7 +1,17 @@
+/* 
+ File: https://pronak657.github.io/GUI/HW5/hw5.html
+ COMP 4610 Assignment 5: Creating an Interactive Dynamic Table
+
+ Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+ Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+ freely copied or excerpted for educational purposes with credit to the author.
+ Created on October 22nd, 2020 at 5:00 PM
+ */
 .myForm {
   padding-top: 100px;
 }
 
+/* controls the style of the multiplication table */
 div#MultiTable {
     margin-left: auto;
     margin-right: auto;
@@ -26,6 +36,7 @@ div#MultiTable {
     width: 80%;
   } */
   
+  /* Controls the style of each cell */
   tbody > tr > td {
     background-color: rgb(195, 209, 131);
     border: 3px solid #663300;
@@ -36,15 +47,18 @@ div#MultiTable {
     padding: 10px;
   }
   
+  /* Controls the color of all even number rows */
   tbody > tr:nth-child(even) > td {
     background-color: rgb(146, 224, 214);
   }
 
+  /* Controls the style top row*/
   tbody > tr:first-child > td {
     background-color:rgb(56, 54, 54);
     color: white;
   }
   
+  /* Controls the style side column*/
   tbody > tr > td:first-child {
     background-color: rgb(56, 54, 54);
     color: white;

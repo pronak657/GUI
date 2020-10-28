@@ -1,12 +1,21 @@
-//https://stackoverflow.com/questions/14643617/create-table-using-javascript
-//https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript
+
+// File: https://pronak657.github.io/GUI/HW5/hw5.html
+// COMP 4610 Assignment 5: Creating an Interactive Dynamic Table
+
+// Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+// Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+// freely copied or excerpted for educational purposes with credit to the author.
+// Created on October 22nd, 2020 at 5:00 PM
+
+// This function is used to validate the user input
 function validateForm() {
     var hstart = document.forms["myForm"]["hstart"].value;
     var hend = document.forms["myForm"]["hend"].value;
     var vstart = document.forms["myForm"]["vstart"].value;
     var vend = document.forms["myForm"]["vend"].value;
     
-    if (hstart == null || hstart == "" || hend == null || hend == "", vstart == null || vstart == "" || vend == null || vend == "") 
+    console.log(parseInt(hstart));
+    if (hstart == null || hstart == "" || hend == null || hend == "" || vstart == null || vstart == "" || vend == null || vend == "") 
     {
         document.getElementById("MultiTable").innerHTML = "";
         document.getElementById("MultiTable").innerHTML = "<p class=\"container\"> Please fill out all the values. <p>"
@@ -19,15 +28,16 @@ function validateForm() {
     }
 }
 
+//This funciton generates and fills up the table based on user input
+// using createElement functions to generate table with table, tbody,
+// tr and td tags
 function generateTable()
 {
-    var hstart = document.forms["myForm"]["hstart"].value;
-    var hend = document.forms["myForm"]["hend"].value;
-    var vstart = document.forms["myForm"]["vstart"].value;
-    var vend = document.forms["myForm"]["vend"].value;
-    //console.log(hstart)
-    // hdiff = Math.abs(hend - hstart);
-    // vdiff = Math.abs(vend - vstart);
+    var hstart = parseInt(document.forms["myForm"]["hstart"].value);
+    var hend = parseInt(document.forms["myForm"]["hend"].value);
+    var vstart = parseInt(document.forms["myForm"]["vstart"].value);
+    var vend = parseInt(document.forms["myForm"]["vend"].value);
+
     hmin = Math.min(hstart, hend);
     hmax = Math.max(hstart, hend);
 
@@ -41,7 +51,6 @@ function generateTable()
     var myTableDiv = document.getElementById("MultiTable");
     if(myTableDiv.childNodes.length != 0)
     {
-        //console.log(myTableDiv.outerHTML)
         myTableDiv.innerHTML = '';
     }
 
@@ -85,7 +94,6 @@ function generateTable()
             tr.appendChild(td);
         }
     }
-    //console.log('complete')
     myTableDiv.appendChild(table);
     return 0;
 }
