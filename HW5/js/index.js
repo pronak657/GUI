@@ -21,6 +21,12 @@ function validateForm() {
         document.getElementById("MultiTable").innerHTML = "<p class=\"container\"> Please fill out all the values. <p>"
         return false;
     }
+    if (hstart.includes("e") || hend.includes("e") || vstart.includes("e") || vend.includes("e")) 
+    {
+        document.getElementById("MultiTable").innerHTML = "";
+        document.getElementById("MultiTable").innerHTML = "<p class=\"container\"> Please only use integers without e <p>"
+        return false;
+    }
     else
     {
         generateTable()
