@@ -59,6 +59,7 @@ function generateTable()
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
 
+    // This for loop is to generate just the top row
     for (var i = 0; i < 1; i++) 
     {
         var tr = document.createElement('TR');
@@ -77,6 +78,7 @@ function generateTable()
         }
     }
     
+    // Here we generate all the columns and fill up the cells
     for (var i = vmin; i <= vmax; i++) 
     {
         var tr = document.createElement('TR');

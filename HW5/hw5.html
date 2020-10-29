@@ -48,18 +48,6 @@
             <!-- myForm class contains the form to get user input -->
             <div class="myForm container">
                 <form name="myForm" onsubmit="validateForm(); return false">
-                    <!-- <label for="hstart">Starting horizontal multiplier:</label><br>
-                    <input type="number" id="hstart" name="hstart" value="1"><br>
-                    <label for="hend">Ending horizontal multiplier:</label><br>
-                    <input type="number" id="hend" name="hend" value="5"><br><br>
-        
-                    <label for="vstart">Starting vertical multiplier:</label><br>
-                    <input type="number" id="vstart" name="vstart" value="1"><br>
-                    <label for="vend">Ending vertical multiplier:</label><br>
-                    <input type="number" id="vend" name="vend" value="5"><br><br>
-        
-                    <input type="submit" value="Submit" onclick="generateTable()"> -->
-        
                     <div class="form-row">
                         <div class="form-group col-md-3 col-sm-12">
                             <label for="hstart">Starting horizontal multiplier:</label>
@@ -87,7 +75,8 @@
                 </form>  
             </div>
             <br>
-            <div id="MultiTable"></div>
+            <!-- This is where the table will be inserted -->
+            <div class="table" id="MultiTable"></div>
 
             <footer class="footer bg-dark small text-center text-white-50 fixed-bottom">
                 <div class="container">All Rights Reserved. Copyright © Ronak Patel 2020</div>

@@ -7,12 +7,18 @@
  freely copied or excerpted for educational purposes with credit to the author.
  Created on October 22nd, 2020 at 5:00 PM
  */
-.myForm {
+  .myForm {
   padding-top: 100px;
-}
+  }
 
 /* controls the style of the multiplication table */
-div#MultiTable {
+  .table#MultiTable {
+  padding: 20px 0;
+  overflow: scroll;
+  height: 550px;
+  }
+
+  div#MultiTable {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -56,12 +62,14 @@ div#MultiTable {
   tbody > tr:first-child > td {
     background-color:rgb(56, 54, 54);
     color: white;
+    position: sticky;
+    top: 0;
   }
   
   /* Controls the style side column*/
   tbody > tr > td:first-child {
     background-color: rgb(56, 54, 54);
     color: white;
+    position: sticky;
+    left: 0;
   }
-
-
