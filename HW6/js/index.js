@@ -25,17 +25,17 @@ $().ready(function() {
             max: "Number entered is too large.<br/>Please enter a number less than or equal to 100",
         },
         hend: {
-            required: "Please enter horizontal start value between -100 to 100",
+            required: "Please enter horizontal end value between -100 to 100",
             min: "Number entered is too small.<br/>Please enter a number greater than or equal to -100",
             max: "Number entered is too large.<br/>Please enter a number less than or equal to 100",
         },
         vstart: {
-            required: "Please enter horizontal start value between -100 to 100",
+            required: "Please enter vertical start value between -100 to 100",
             min: "Number entered is too small.<br/>Please enter a number greater than or equal to -100",
             max: "Number entered is too large.<br/>Please enter a number less than or equal to 100",
         },
         vend: {
-            required: "Please enter horizontal start value between -100 to 100",
+            required: "Please enter vertical end value between -100 to 100",
             min: "Number entered is too small.<br/>Please enter a number greater than or equal to -100",
             max: "Number entered is too large.<br/>Please enter a number less than or equal to 100",
         },
