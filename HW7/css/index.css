@@ -1,0 +1,95 @@
+/* 
+File: https://pronak657.github.io/GUI/HW6/hw7.html
+COMP 4610 Assignment 7: Using the jQuery UI Slider and Tab Widgets
+
+ Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+ Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+ freely copied or excerpted for educational purposes with credit to the author.
+ Created on November 16th, 2020 at 5:00 PM
+ */
+  .myForm {
+  padding-top: 100px;
+  }
+  
+  .error {
+    color: red;
+  }
+
+/* controls the style of the multiplication table */
+  .table#MultiTable {
+  padding: 20px 0;
+  overflow: scroll;
+  height: 550px;
+  }
+
+  div#MultiTable {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  
+  div#MultiTable > p{
+    color: red;
+    font-size: 120%;
+    font-weight: 400;
+  }
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #tabs > #tabWrapper > div:not(:first-child){
+    padding: 20px 0;
+    overflow: scroll;
+    height: 550px;
+  }
+  /* tbody {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  } */
+  
+  /* Controls the style of each cell */
+  tbody > tr > td {
+    background-color: rgb(195, 209, 131);
+    border: 3px solid #663300;
+    color: black;
+    text-align: center;
+    font-size: 130%;
+    font-weight: 700;
+    padding: 5px;
+  }
+  
+  /* Controls the color of all even number rows */
+  tbody > tr:nth-child(even) > td {
+    background-color: rgb(146, 224, 214);
+  }
+
+  /* Controls the style top row*/
+  tbody > tr:first-child > td {
+    background-color:rgb(56, 54, 54);
+    color: white;
+    position: sticky;
+    top: 0;
+  }
+  
+  /* Controls the style side column*/
+  tbody > tr > td:first-child {
+    background-color: rgb(56, 54, 54);
+    color: white;
+    position: sticky;
+    left: 0;
+  }
+
+  .form-group {
+    margin-right: 15px;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  
