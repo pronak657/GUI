@@ -92,4 +92,14 @@ COMP 4610 Assignment 7: Using the jQuery UI Slider and Tab Widgets
     margin: 0;
   }
 
+  .ui-widget-header {
+    background: #343a40;
+    border: #343a40;
+  }
+
+  .ui-widget-content {
+    background: #dadadace;
+  }
+  
+
   

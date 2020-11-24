@@ -14,10 +14,13 @@ $( document ).ready(function() {
 	removeTab();
 });
 
+// call the addTab function when the save button is clicked
 $("#save").click(function() {
     addTab($(this));
 });
 
+// This function takes current table content and
+// creates another tab with the same table content
 function addTab(link) {
 	
 	var hstart = parseInt(document.forms["myForm"]["hstart"].value);
@@ -36,17 +39,19 @@ function addTab(link) {
 	var idName = "'tab-" + numTabs + "'";
 
 	tabContent = $("#MultiTable").html() ;
-	//tabContent.attr('id') = hrefName;
 	//console.log(tabContent)
 	var tabs = $( "#tabs" ).tabs();
 	var ul = tabs.find( "ul" );
 
+	// add the appropriate html content for the tabs
 	document.getElementById("tabUl").innerHTML += "<li><a href=" + hrefName + ">" + tabName + "</a><span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span><input type='checkbox' class='tabCheckBox'></li>";	
 	document.getElementById("tabWrapper").innerHTML += "<div class='table' id=" + idName + ">" + tabContent + "</div>";
 	$("#tabs").tabs("refresh");
 	numTabs++;
 }
 
+// This funcntion listens for click event when the
+// close icon is clicked and removes the tab
 function removeTab() {
 	$("#tabs").on("click", "span.ui-icon-close", function () {
 		var divId = $(this).closest("li").remove().attr("aria-controls");
@@ -55,11 +60,16 @@ function removeTab() {
 	});
 }
 
+// This function takes all the selected tabs
+// and deletes all of them
 function deleteSelectedTabs() {
 	$("#tabs ul li").each(function() { 
 		var divId = $(this).attr("aria-controls");
 		//console.log(divId);
 		console.log($(this).attr("tabCheckBox"));
+
+		//ignore the tab with MultiTable id since that's the
+		// current tab
 		if(divId == ("MultiTable")) {}
 	  	else if ($(this).find('input').prop("checked")) {
 			$(this).remove()
@@ -70,6 +80,7 @@ function deleteSelectedTabs() {
 	$("a[href='#MultiTable']").click();
 }
 
+// This function deletes all tab all together
 function deleteAllTabs() {
 	$("#tabs ul li").each(function() { 
 		var divId = $(this).attr("aria-controls");
@@ -91,9 +102,12 @@ function submitForm() {
 	}
 }
 
+// This function listens for slider change event
+// and then updates the text box and table accordingly
 function slider() {
 	$( "#tabs" ).tabs();
 
+	// update text field based on slider value
 	$("#hstart-slider").slider(
 	{
 		min:-60,
@@ -106,15 +120,11 @@ function slider() {
 		}
 	});
 
+	// update slider based on text value
 	$("#hstart").keyup(function() {
 		$("#hstart-slider").slider("value", $(this).val());
 		submitForm();
 	});
-
-	// $("#hstart").bind('keyup mouseup', function() {
-	// 	$("#hstart-slider").slider("value", $(this).val());
-	// 	$("form[name='myForm']").submit()
-	// });
 
 	$("#hend-slider").slider(
 	{
@@ -145,10 +155,10 @@ function slider() {
 			}
 		});
 
-		$("#vstart").keyup(function() {
-			$("#vstart-slider").slider("value", $(this).val());
-			submitForm();
-		});
+	$("#vstart").keyup(function() {
+		$("#vstart-slider").slider("value", $(this).val());
+		submitForm();
+	});
 
 	$("#vend-slider").slider(
 		{
@@ -162,12 +172,14 @@ function slider() {
 			}
 		});
 
-		$("#vend").keyup(function() {
-			$("#vend-slider").slider("value", $(this).val());
-			submitForm();
-		});
+	$("#vend").keyup(function() {
+		$("#vend-slider").slider("value", $(this).val());
+		submitForm();
+	});
 }
 
+// This function is to validate the form and show
+// appropriate errors accordingly 
 function validateForm() {
 
 	$("form[name='myForm']").validate({
@@ -206,19 +218,9 @@ function validateForm() {
 		generateTable();
 		return false;
 	},
-	// onmouseup:function(form) {
-	// 	$("form[name='myForm']").submit()
-	// },
+	
 	onkeyup:function(form) {
-		//generateTable();
-		//validateForm()
-		//$("form[name='myForm']").submit();
 		submitForm();
-		//$("form[name='myForm']").valid();
-		// if( $("#myForm").valid() == true ) {
-		//     // Then make it submit, which should update the tab in the process.
-		//     $("#myForm").submit();
-		// }
 	},
 	
 	});
