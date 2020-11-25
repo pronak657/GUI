@@ -16,7 +16,9 @@ $( document ).ready(function() {
 
 // call the addTab function when the save button is clicked
 $("#save").click(function() {
-    addTab($(this));
+    if( $("form[name='myForm']").valid() == true ) {
+		addTab($(this));
+	}
 });
 
 // This function takes current table content and
