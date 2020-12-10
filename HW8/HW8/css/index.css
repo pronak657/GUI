@@ -1,0 +1,68 @@
+/* 
+File: https://pronak657.github.io/GUI/HW8/hw8.html
+COMP 4610 Assignment 8: Implementing a Bit of Scrabble with Drag-and-Drop
+
+ Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+ Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+ freely copied or excerpted for educational purposes with credit to the author.
+ Created on November 29th, 2020 at 5:00 PM
+ */
+
+ body {
+   padding-top: 100px;
+ }
+
+ #tiles {
+    background-image: url("/graphics_data/tile-holder.png");
+  /* background-size: 300px 100px; */
+    background-repeat: no-repeat;
+    width: 550px;
+    height: 100px;
+    margin-top: 50px;
+  }
+
+ .tileOnHolder{
+    position: relative;
+    width: 60px; 
+    height: 64px; 
+    margin: 1px; 
+    float: left;
+ }
+
+  #gameStatus { 
+    width: 600px; 
+    margin: 30px auto 10px auto; 
+    padding-bottom: 5px; 
+    border-bottom: 1px solid #339933; 
+    font-size: 14px; 
+  }
+
+  #gameStatus div 
+  { 
+    display: inline-block;
+  }
+  #gameStatus > div > div:nth-child(2) { 
+    width: 72px; 
+    font-weight: bold; 
+  }
+
+  .dialogBoxTile {
+    position: relative;
+    width: 60px; 
+    height: 64px; 
+    margin: 1px; 
+    float: left;
+  }
+
+  .ui-dialog-titlebar-close {
+    visibility: hidden;
+  }
+
+    .ui-widget-header {
+    background: #343a40;
+    border: #343a40;
+  }
+
+  .ui-widget-content {
+    background: #f1f1f1d2;
+  }

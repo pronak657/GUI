@@ -1,0 +1,105 @@
+<!--
+File: https://pronak657.github.io/GUI/HW8/hw8.html
+COMP 4610 Assignment 8: Implementing a Bit of Scrabble with Drag-and-Drop
+
+ Ronak Patel, UMass Lowell Computer Science, Ronak_Patel@student.uml.edu
+ Copyright (c) 2020 by Ronak Patel. All rights reserved. May be
+ freely copied or excerpted for educational purposes with credit to the author.
+ Created on November 29th, 2020 at 5:00 PM
+-->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Bit of Scrabble</title>
+		<meta charset="utf-8">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+	rel = "stylesheet">
+	<link rel="stylesheet" href="css/index.css">
+	<title>Ronak Patel</title>
+	<link rel="icon" type="image/x-icon" href="./img/logo2.ico" />
+	<!-- Font Awesome icons (free version)-->
+	<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+
+	</head>
+	<body id="page-top">
+		<div class="wrapper">
+			<!-- Navigation bar for quick links -->
+			<nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark fixed-top bg-dark" id="mainNav">
+				<div class="container">
+					<a class="navbar-brand " href="#page-top">Bit of Scrabble</a>
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+						Menu
+						<i class="fas fa-bars"></i>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item"><a class="nav-link " target="_blank" href="https://pronak657.github.io/GUI/">Home</a></li>
+							<li class="nav-item"><a class="nav-link " target="_blank" href="https://pronak657.github.io/GUI/#about">About</a></li>
+							<li class="nav-item"><a class="nav-link " target="_blank" href="https://pronak657.github.io/GUI/#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			
+			<div class="containmentWrapper">
+				<div class="container">
+					<p>You can start constructing a word by dragging a letter to the first tile on the board.</p>
+					<img id="SB1" class="boardTile" src="graphics_data/Empty_Tile.png">
+					<img id="SB2" class="boardTile" src="graphics_data/Double_Letter_Score_Tile.png">
+					<img id="SB3" class="boardTile" src="graphics_data/Empty_Tile.png">
+					<img id="SB4" class="boardTile" src="graphics_data/Empty_Tile.png">
+					<img id="SB5" class="boardTile" src="graphics_data/Double_Letter_Score_Tile.png">
+					<img id="SB6" class="boardTile" src="graphics_data/Empty_Tile.png">
+					<img id="SB7" class="boardTile" src="graphics_data/Empty_Tile.png">
+				</div>
+			</div>
+	  
+			<div id="tiles" class="container">
+				<!-- <div id="currentSet"></div> -->
+			</div>
+
+			<div id="gameStatus">
+				<div>
+				  	<div class="label">Word:</div>
+				  	<div id="word"></div>
+				</div>
+				<div>
+				  	<div class="label">Score:</div>
+				  	<div id="score">0</div>
+				</div>
+				<div>
+				  	<div class="label">Remaining Tiles:</div>
+				  	<div id="remainingTiles">100</div>
+				</div>
+				<div>
+				  	<div class="label">Highest Score:</div>
+				  	<div id="highestScore">0</div>
+				</div>
+			</div>
+
+			<div class="status container" >
+				<button disabled='true' id="nextWord" onClick="newLetters()" class="btn btn-primary">Next Word</button>
+				<button id="reset" onClick="resetScore()" class="btn btn-primary">Reset</button> 
+			</div>
+
+			<footer class="footer bg-dark small text-center text-white-50 fixed-bottom">
+				<div class="container">All Rights Reserved. Copyright © Ronak Patel 2020</div>
+			</footer>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<!-- <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script> -->
+		<script src="js/index.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+	</body>
+</html>
