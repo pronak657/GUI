@@ -267,6 +267,7 @@ function resetScore() {
 	$("#remainingTiles").html("100")
 	$('.containmentWrapper .container img').droppable('enable');
 	$("#currentSet").remove();
+	document.getElementById("nextWord").disabled = true;
 	CardsOnDeck = 0;
 	CLetters = [];
 	resetTileData();
