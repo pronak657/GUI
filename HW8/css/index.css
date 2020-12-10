@@ -13,7 +13,7 @@ COMP 4610 Assignment 8: Implementing a Bit of Scrabble with Drag-and-Drop
  }
 
  #tiles {
-    background-image: url("https://pronak657.github.io/GUI/HW8/graphics_data/tile-holder.png");
+    background-image: url("/graphics_data/tile-holder.png");
   /* background-size: 300px 100px; */
     background-repeat: no-repeat;
     width: 550px;

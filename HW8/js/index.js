@@ -13,7 +13,7 @@ $( document ).ready(function() {
 CardsOnDeck = 0;
 CLetters = [];
 TotalTiles = 100;
-
+tileNum = 0;
 // Function to set up the initial start of the game
 function setUp() {
 	setUpBoard();
@@ -35,9 +35,16 @@ function removeItemOnce(arr, value) {
 // update drag and drop properties and update CLetter array
 function dropEvent( event, ui ) {
 	var draggable = ui.draggable;
+	tileLetter = draggable.prop('currentSrc').split("/")
+	letter = tileLetter[tileLetter.length - 1][14]
 	//console.log($(draggable).prop('currentSrc').includes("Tile_Blank"));
 	//console.log( 'ID "' + draggable.attr('id') + '" was dropped board' );
 	var $this = $(this);
+
+	if(draggable.prop('currentSrc').includes("Blank"))
+	{
+		letter = "_"
+	}
     ui.draggable.position({
 		my: "center",
 		at: "center",
@@ -50,18 +57,20 @@ function dropEvent( event, ui ) {
 	document.getElementById("nextWord").disabled = false;
 	CardsOnDeck--;
 	
-	removeItemOnce(CLetters, draggable.attr('id')[4]);
+	removeItemOnce(CLetters, letter);
 	$('.containmentWrapper .container img').droppable('disable');
+	
+	
+	console.log(letter);
 	$("#" + draggable.attr('id')).draggable('disable');
-	//console.log($(event.target).attr('id'));
 	
 	nextTile = 'SB' + (parseInt($(event.target).attr('id')[2]) + 1)
 	$('#' + nextTile).droppable('enable');
-	displayWord(draggable.attr('id'));
-	displayScore(draggable.attr('id'), $(event.target).prop('currentSrc').includes("Double_Score"));
+	displayWord(letter);
+	displayScore(letter, $(event.target).prop('currentSrc').includes("Double_Letter_Score"));
 	//console.log($(event.target).prop('currentSrc').includes("Double_Score"));
 
-	if(draggable.attr('id') == "tile_")
+	if(letter == "_")
 	{
 		blankTileDialog(draggable, event, ui, $(this))
 	}
@@ -83,24 +92,24 @@ function blankTileDialog(blankTile, event, ui, $this) {
 			choosnTile = $("<img src='" + tileLocation + "' class='dialogBoxTile' id='tile" + letter + "'>");
 	
 			choosnTile.click(function() {
-				var newLetter = $(this).attr("id");
-				newTileLocation = "graphics_data/Scrabble_Tiles/" + image_name + newLetter[4] + ".jpg";
-				blankTile.attr("id", newLetter);
+				//tileLetter = ui.draggable.prop('currentSrc').split("/")
+				var newLetter = $(this).attr("id")[4]
+				newTileLocation = "graphics_data/Scrabble_Tiles/" + image_name + newLetter + ".jpg";
+				blankTile.attr("id", "tile" + tileNum);
 				blankTile.attr("src", newTileLocation);
-				
+				tileNum++;
 				// Close the pop-up and update the word and score accordingly
 				tileSelectorDialog.dialog("close");
 				var w = $("#word").html();
-				var word = w.replace("_", newLetter[4]);
+				var word = w.replace("_", newLetter);
 				$("#word").html(word);
-				displayScore(blankTile.attr('id'), $(event.target).prop('currentSrc').includes("Double_Score"));
+				displayScore(newLetter, $(event.target).prop('currentSrc').includes("Double_Letter_Score"));
 			});
 		tileSelectorDialog.append(choosnTile);
 		
 	  	}
 	}
-	
-	tileSelectorDialog.dialog({ title: "Selcet a letter", modal: true, draggable: false, resizable: false, dialogClass: 'no-close', width: 500 });
+	tileSelectorDialog.dialog({ title: "Selcet a letter", modal: true, draggable: false, resizable: false, width: 500 });
 }
 
 // Function to set up the board and make it
@@ -173,7 +182,7 @@ function chooseLetters(numOfCardNeeded) {
 // and show those as a draggable tiles
 function displayTile(randomLetter) {
 	var image_name = "Scrabble_Tile_";
-	tileId = "tile" + randomLetter;
+	tileId = "tile" + tileNum;
 	tileLocation = "graphics_data/Scrabble_Tiles/" + image_name + randomLetter + ".jpg";
 
 	if(randomLetter == '_')
@@ -190,13 +199,14 @@ function displayTile(randomLetter) {
 	);
 	$("#currentSet").append(tile);
 	CardsOnDeck++;
+	tileNum++;
 }
 
 // This function executes when user clicks New Word button
 // Function only draws the tiles needed to bring total number of
 // tiles on holder to 7
 function newLetters() {
-	$('.containmentWrapper .container img').droppable('enable');
+	$('#SB1').droppable('enable');
 	$("#currentSet").remove();
 	//console.log(CLetters.length);
 	//console.log(CLetters);
@@ -235,13 +245,13 @@ function newLetters() {
 
 // Function to update the word created so far
 function displayWord(tile) {
-	word = $("#word").html() + tile[4];
+	word = $("#word").html() + tile;
 	$("#word").html(word);
 }
 
 // Function to display the total score of the current game
 function displayScore(tile, doubleScore) {
-	value = parseInt(ScrabbleTiles[tile[4]]['value']);
+	value = parseInt(ScrabbleTiles[tile]['value']);
 	if(doubleScore) value = value * 2;
 	score = parseInt($("#score").html()) + value;
 	$("#score").html(score);
@@ -270,6 +280,7 @@ function resetScore() {
 	document.getElementById("nextWord").disabled = true;
 	CardsOnDeck = 0;
 	CLetters = [];
+	tileNum = 0;
 	resetTileData();
 	setUp()
 
