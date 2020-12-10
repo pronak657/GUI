@@ -99,8 +99,8 @@ function blankTileDialog(blankTile, event, ui, $this) {
 		
 	  	}
 	}
-	//tileSelectorDialog.css("z-index", 100);
-	tileSelectorDialog.dialog({ modal: true, draggable: false, resizable: false });
+	
+	tileSelectorDialog.dialog({ title: "Selcet a letter", modal: true, draggable: false, resizable: false, dialogClass: 'no-close', width: 500 });
 }
 
 // Function to set up the board and make it
@@ -121,7 +121,9 @@ function setUpBoard() {
 				},
 			}
 		);
-	}	
+	}
+	$('.containmentWrapper .container img').droppable('disable');
+	$("#SB1").droppable('enable');	
 }
 
 // Function to choose random letters from the database
